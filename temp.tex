@@ -1,0 +1,878 @@
+\chapter{Some Preliminaries}
+\section{Intoduction to Set Thoery}
+\begin{defn}
+	A well defined collection of objects is called set.
+\end{defn}
+Here 'Well defined' removes any ambiguity in process of selection of objects to make a set.
+\section{Algebra of Sets}
+.
+
+Union
+
+Intersection
+
+Complement with respect to a set (Difference)
+
+Complement with respect to universe
+
+Cross Product
+
+Relations
+
+Equivalence Relations
+
+\section{The integers modulo $n$}
+Let $n$ be a fixed integer. Define a relation on $\Z$ by
+\[a \sim b \iff n|(b-a)\]
+This relation is called as \ind{congruence relation}.
+We read it as: $a$ is congruent to $b$ modulo $n$. We also write this as
+\[a\equiv b \pmod{n} \]
+\begin{ex}
+	$5\sim 15$ for $n=5$ as $5|(15-5)$. So, 5 is congruent to 15 modulo 5. Think when $n=3$. 5 is not congruent to 15 modulo 3.
+\end{ex}
+\begin{ex}  
+$42 = 30 \pmod{6}$
+because 42 − 30 = 12, which is a multiple of 6.
+\end{ex}
+\begin{thm}
+	Congruence relation is equivalence relation.
+\end{thm}
+\begin{proof}
+\begin{enumerate}
+	\item $a\sim a$ because $n|(a-a)$.
+	\item 
+	\begin{align*}
+	a\sim b 	&\iff n|(b-a) \\
+				&\iff n|(a-b) \\
+				&\iff b\sim a 
+	\end{align*}
+	
+		\item 
+	\begin{align*}
+	a\sim b, b \sim c 	&\implies n|(b-a) \text{ and }  n | (c-b) \\
+	&\implies n|(a-b)+(c-b) \\
+	&\implies n|(c-a) \\
+	&\implies a\sim c 
+	\end{align*}
+Since all above three properties are satisfied, the relation $\sim$ is an equivalence relation.
+\end{enumerate}	
+\end{proof}
+\subsection{Reminders}
+Finding the remainder is referred to as the modulo operation, and denoted with "mod" . 
+\begin{ex}
+The remainder of the division of 14 by 12 is denoted by $14 \mod 9$; as this remainder is 5, so we have 
+$$14 \mod 12 = 2.$$
+\end{ex}
+
+The congruence, indicated by $\equiv$ followed by "(mod)", means that the operator "mod", applied to both side, gives the same result. That is
+\[ a\equiv b{\pmod {n}}\]
+is equivalent to
+\[a\mod{n}=b \mod{n}.\]
+\subsection{Congruence classes}
+Consider the following set
+\[\bar{a} = \set{a+kn | k \in \Z} = \set{\ldots,a-2n, a-n, a, a+n, a+2n,\ldots}\]
+$\bar{a}$ is called equivalence class of $a$. This set, consisting of the integers congruent to a modulo $n$, is also called the congruence class or residue class or simply residue of the integer $a$, modulo $n$. When the modulus $n$ is known from the context, that residue may also be denoted [$a$].
+
+Any one of its members may represent each residue class modulo $n$. Usually, We denote each residue class by the smallest nonnegative integer of that class.
+
+Think about any two integers of different residue classes modulo $n$. Is there any possibility of being these congruent modulo $n$ to each other? No, never. These are incongruent modulo $n$. That means, every integer belongs to one and only one residue class modulo $n$.
+
+Now, think! how many congruence classes are? This depends on $n$. Think when $n=2$.
+
+When remainder is 0;
+\[ \bar{0} = \set{\ldots, -4, -2, 0, 2, 4, \ldots}\]
+
+When remainder is 1;
+\[ \bar{1} = \set{\ldots, -3, -1, 1, 3, \ldots}\]
+
+Note that no other classes are possible. Look carefully that $\bar{2}$ is same as $\bar{0}$ and so on.
+
+In general, There are exactly $n$ distinct equivalence classes modulo $n$, namely,
+\[\bar{0}, \bar{1}, \ldots, \bar{(n-1)}\] 
+This can be determined by possible remainders after division by $n$. These residue classes partition the set of integers $\Z$. Here look in above discussion, $\Z$ is partitioned in two parts, the set $\bar{0}$ and $\bar{1}$.
+\subsection{Integers modulo n}
+\begin{defn}
+	The set of all residue classes of integers for modulo $n$ is called the set of integer modulo $n$ and is denoted by $\Z/n\Z$ or $\Z_n$.
+\end{defn}
+
+The set is defined as follows.
+\[\Z/n\Z =\set{{\overline {a}}_{n}|a\in \Z}.\]
+When $n=0$, it is same as $\Z$ , since $\bar{a_0} = \{a\}$. 
+When $n \neq 0$, it  has $n$ elements, and can be written as:
+\[\Z/n\Z = \set{{\overline {1}}_{n},{\overline {2}}_{n},\ldots ,{\overline {(n-1)}}_{n}}\]
+\section{Algebra of $\Z/n\Z$}
+Addition, subtraction, and multiplication on $\Z/n\Z$ are defined by the following rules:
+\[
+{\overline {a}}_{n}+{\overline {b}}_{n}={\overline {(a+b)}}_{n} \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,
+{\overline {a}}_{n}-{\overline {b}}_{n}={\overline {(a-b)}}_{n}\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,
+{\overline {a}}_{n}{\overline {b}}_{n}={\overline {(ab)}}_{n}.
+\]
+\begin{ex}
+	Let $n=12$.
+	\[\Z/n\Z = \set{0,1,2,3,4,5,6,7,8,9,10,11}\]
+Let $\overline{a}=3$, $\overline{b}=9$, then $a+b = 3+9 = 12$. Take $\mod 12$, that gives $12\mod 12 = 0 = \overline{a+b}$, i.e.,
+\[3+9 \equiv 0 \pmod{12}\]
+\end{ex}
+\begin{ex}
+	From previous example,
+	$3.9 = 27$. On reducing to modulo 12, we get 3, i.e.,
+	\[3.9 \equiv 3 \pmod{12}\]
+\end{ex}
+\section{A subset of $\Z/n\Z$}
+\[(\Z/n\Z)^{\times} = \set{\overline{a}\in \Z/n\Z | \gcd{(a,n)} =1}\]
+Tn other words, $a$ has inverse in the set.
+\begin{ex}
+ \[(\Z/n\Z)^{\times} = \set{\over}\]
+\end{ex}
+\chapter{Introduction to Groups}
+\section{Basics}
+\subsection{Ordered Pair}
+The ordered collection of $n$ objects denoted as $(a_1,a_2, ...,a_n)$ and is called ordered $n$-tuple. When we talk about only two objects, we call it ordered pair. i.e. $(a,b)$ is an ordered pair.
+
+Two ordered pair $(a,b)$ and $(c,d)$ are said to equal if and only if $a=c$ and $b=d$. Therefore $(a,b) \neq (b,a)$ unless $a=b$.
+
+\subsection{Cartesian Product}
+
+Let $A$ and $B$ sets. The cartesian product\footnote{Named after Rene Descartes, a Mathematician.} of $A$ and $B$, denoted by $A \times B$, is the set of all ordered pairs $(a,b)$ where $a \in A$ and $b \in B$. Mathematically,
+\[A \times B = \{(a,b)| a \in A \text{ and } b \in B\}\]
+\begin{ex}
+ The cartesian product of $A=\{1,2,3\}$ and $B=\{a,b\}$ is
+\[A \times B = \{(1,a),(1,b),(2,a),(2,b),(3,a),(3,b),\}\]
+\end{ex}
+
+\subsection{Relation} Let $A$ and $B$ be two nonempty sets. A relation $R$ from $A$ to $B$ is subset of $A \times B$. That is, if $R \subset A \times B$ and $(a,b) \in R$, we say that $a$ is related to $b$ by relation $R$. We write it as $aRb$. 
+
+Frequently $A$ and $B$ are equal. In  this case, we often say that $R \subseteq A \times A$ is a relation on A. (Instead of saying relation from $A$ to $A$).
+\subsection{Binary Operations}
+\begin{defn}[Binary Operation]
+A binary operation on a set $G$ is a rule which assigns each order pair of
+$G$ an element of $G$. 
+This rule is well defined, that is, exactly one element is assigned to each possible ordered pair of $G$.
+This rule is closed, i.e., for each ordered pair in $G$, the element assigned
+is again in $G$.
+\end{defn}
+
+The map $*:G\times G \to G$ is a binary operation on $G$. It is conventional to write $a*b$ in place of $*(a,b)$.
+
+\begin{ex}
+Usual addition $+$ is a binary operation on the set $\R$. e.g. consider an
+ordered pair (2,2.5), addition assigns 4.5 to this ordered pair. 
+\end{ex}
+\begin{ex}
+On $\Q^+$, let $a*b:=a/b$. Check, here $*$ is a binary operation on $\Q^+$
+\end{ex}
+\begin{ex}
+On $\Q$, let $a*b:=a/b$. Check, here $*$ is not a binary operation on $\Q$.
+Note that here it is not well defined as there is no number assigned to the
+ordered pair $(2,0).$
+\end{ex}
+\begin{ex}
+On $\Z^+$, let $a*b:=a/b$. Check, here $*$ is not a binary operation on $\Z$.
+Note that here $\Z^+$ is not closed  under $*$.
+\end{ex}
+\subsection{Some properties of binary operations}
+\begin{defn}
+A binary operation $*$ on set $G$ is commutative if $a*b = b*a$ for all $a,b\in
+G$.
+\end{defn}
+\begin{defn}
+A binary operation $*$ on set $G$ is associative if $(a*b)*c = a*(b*c)$ for all $a,b, c\in G$.
+\end{defn}
+\section{Group}
+\begin{defn}
+Let $G$  be a set closed under a binary operation $*$. We denote this  algebraic
+structure as $(G,*)$. The algebraic structure $(G,*)$ is a group if the following
+properties are satisfied.
+\begin{enumerate}
+\item The operation is associative; that is $\forall a,b,c \in G$, we have
+\[a*(b*c) =(a*b)*c\]
+\item There is an element $e$ (called the identity) in $G$ such that $\forall
+a\in G$
+\[e*a = a*e=a\]
+\item  There is an element $a'$ corresponding to each element $a\in G$ (called
+an inverse of $a$) such that \[aa' = a'a = e\]
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+	$\Z, \Q, \R, \C$ are groups under addition $(+)$.
+\end{ex}
+
+\begin{ex}
+	$\Z-\set{0}, \Q^+, \R^+, \R-\set{0}, \C-\set{0}$ are groups under product $(\times)$.
+\end{ex}
+
+\begin{defn}
+A group $(G,*)$ is \ind{Abelian} if binary operation $*$ is commutative.
+That is, if group has the property $ab=ba$ for every pair of elements $a$
+and $b$
+.\end{defn}
+
+\begin{xca}
+Check previous two examples. Recognize, which are Abelian?
+\end{xca}
+
+\begin{ex}
+	Is $(G,*)$ a Abelian group? Where $G:=\set{(x,y,z)\in \R^3}$ Binary operation $*$ is defined as 
+	\[(x_1,y_1,z_1) + (x_2,y_2,z_2) = (x_1+x_2,y_1+y_2,z_1+z_2)\]
+\end{ex}
+\begin{proof}
+To Do (Yes! It is Abelian group.)	
+\end{proof}
+
+\begin{xcb}{Exercises}
+\begin{enumerate}
+	\item Decide which of the following binary operations are associative and commutative.
+	\begin{enumerate}
+		\item The algebraic structure $(\Z,*)$ where binary operation is defined by $a*b=a-b$
+		\item The algebraic structure $(\R,*)$ where binary operation is defined by $a*b=a+b+ab$
+		\item The algebraic structure $(\Q,*)$ where binary operation is defined by $a*b=\frac{a+b}{3}$
+		\item The algebraic structure $(\Z\times \Z,*)$ where binary operation is defined by $$(a,b)*(c,d)=(ad+bc,bd)$$
+		\item The algebraic structure $(\Z,*)$ where binary operation is defined by $a*b=a-b$
+	\end{enumerate}
+\item Prove  $\forall\; n\in \N>1$ that $\Z/n\Z$ is not a group under multiplication of residue classes.
+\item Verify that each of the following examples are groups under the proposed
+operation, and calculate the identity and the inverse of a general element.
+\begin{enumerate}
+	\item{The integers $\Z$ under $+$.}
+		\item{The set $\R^n$ under component-wise addition.}
+	\item{The set of $2\times 2$ matrices with real entries and nonzero determinant under
+		matrix multiplication. 
+		This is called the {\em general linear group in dimension $2$ over $\R$} and denoted as $GL_2(\R)$ or $GL(2,\R)$}.
+	\item{The set of $2\times 2$ matrices of the form $\left[\begin{matrix}
+		a & b \\ 0 & 1 \\ \end{matrix}\right]$ where $a$ is nonzero and $b$ is arbitrary under
+		matrix multiplication.}
+\end{enumerate}
+\end{enumerate}
+\end{xcb}
+
+\section{Properties}
+Here we denote $a*b$ as $ab$. If context of binary operation is obvious we will omit the symbol $*$ for convenience
+\begin{thm}
+The identity element of the group is unique.
+\end{thm}
+\begin{proof}
+Let $e$, $e'$ be the two identities in $G$. Now, if $a\in G$,
+then
+
+\begin{eqnarray}
+a\in G & \Rightarrow & ae=a\;\;\;\;\;\text{(as \ensuremath{e} is identity)}\label{eq:eq1}\\
+a\in G & \Rightarrow & ae'=a\;\;\;\;\,\text{(as \ensuremath{e'}is identity)}\label{eq:eq2}
+\end{eqnarray}
+
+From \ref{eq:eq1} and \ref{eq:eq2}, we get
+
+\begin{eqnarray*}
+ae & = & ae'\\
+e & = & e'
+\end{eqnarray*}
+
+Hence the identity element in a group is unique.
+\end{proof}
+\begin{thm}
+The inverse of each element of the group is unique.
+\end{thm}
+\begin{proof}
+Let $b$, and $c$ be the two inverses of $a\in G$. $e$ is the identity
+element of the group, then
+
+\begin{eqnarray}
+a\in G,b\in G & \Rightarrow & ab=e\;\;\;\;\;\text{(as \ensuremath{b} is inverse of \ensuremath{a})}\label{eq:eq3}\\
+a\in G,c\in G & \Rightarrow & ac=e\;\;\;\;\;\text{(as \ensuremath{c}is inverse of \ensuremath{a})}\label{eq:eq4}
+\end{eqnarray}
+
+From \ref{eq:eq3} and \ref{eq:eq4}, we get
+
+\begin{eqnarray*}
+ab & = & ac\\
+b & = & c
+\end{eqnarray*}
+
+Hence the inverse element in a group is unique.
+\end{proof}
+\begin{thm}
+In group, $(a^{-1})^{-1}=a$.
+\end{thm}
+\begin{proof}
+Here, $(a^{-1})^{-1}$ is inverse of $a^{-1}$, and by definition
+of inverse, we have 
+\begin{eqnarray*}
+a^{-1}(a^{-1})^{-1} & = & e
+\end{eqnarray*}
+
+Multiply both sides by $a$, we get
+
+\begin{eqnarray*}
+a(a^{-1}(a^{-1})^{-1}) & = & ae\\
+(aa^{-1})(a^{-1})^{-1} & = & a\\
+e(a^{-1})^{-1} & = & a\\
+(a^{-1})^{-1} & = & a
+\end{eqnarray*}
+
+Hence.
+\end{proof}
+\begin{thm}
+The inverse of the product of two elements of a group $G$ is the
+product of the inverses tken in reverse order. i.e. $(ab)^{-1}=b^{-1}a^{-1}$.
+\end{thm}
+\begin{proof}
+Here $(ab)^{-1}$ is inverse of $ab$. By definition of inverse, we
+have 
+\begin{eqnarray*}
+\Rightarrow & (ab)(ab)^{-1} & =e\\
+\Rightarrow & a^{-1}(ab)(ab)^{-1} & =a^{-1}e\\
+\Rightarrow & (a^{-1}a)b(ab)^{-1} & =a^{-1}\\
+\Rightarrow & eb(ab)^{-1} & =a^{-1}\\
+\Rightarrow & b(ab)^{-1} & =a^{-1}\\
+\Rightarrow & b^{-1}b(ab)^{-1} & =b^{-1}a^{-1}\\
+\Rightarrow & e(ab)^{-1} & =b^{-1}a^{-1}\\
+\Rightarrow & (ab)^{-1} & =b^{-1}a^{-1}
+\end{eqnarray*}
+
+Hence $(ab)^{-1}=b^{-1}a^{-1}$.
+\end{proof}
+
+\begin{thm}
+	In a group left and right cancellation laws hold.\\
+	Left cancellation law: if $au = av \implies u=v$\\
+    Right cancellation law: if $ub = vb \implies u=v$
+\end{thm}
+\begin{proof}
+	Suppose $au=av$. Then
+	Apply $a^{-1}$ on both side in left. Then check every step. Each step is based on some axiom of group.
+	\[a^{-1}(au) =a^{-1}(av)\]
+		\[(a^{-1}a)u =(a^{-1}a)v\]
+				\[(e)u =(e)v\]
+								\[u =v\]
+	Do other part yourself.
+	\end{proof}
+\begin{thm}
+Let $G$ be a group then the equations $ax=b$ and $ya=b$
+have unique solutions, $x,y$, where $a,b,x,y \in G$.
+\end{thm}
+\begin{proof}
+	Left as an exercise.
+	\end{proof}
+
+\begin{ex}[The group $Z_n$ of integers under addition modulo $n$] \label{Ex1.5} For each integer $n \ge 2$ define the set 
+        $$
+        \Z_n = \{ 0, 1, 2, \dots, n-1 \}.
+        $$ For all $a, b \in \Z_n$ let
+        
+        \vskip 3 pt
+        
+        \noindent $a + b = $  remainder when the ordinary sum of
+        $a$ and $b$ is divided by $n$, and 
+        
+        \vskip 3pt 
+        
+        \noindent $a \cdot b = $  remainder when the ordinary product of
+        $a$ and $b$ is divided by $n$.
+        
+\end{ex}
+
+The binary operations defined in Example \ref{Ex1.5} are usually
+referred to as {\bf addition modulo\index{addition modulo $n$}} $n$
+and  {\bf multiplication modulo\index{multiplication modulo $n$}}
+$n$. The integer
+$n$ in $\Z_n$ is  called the {\bf modulus\index{modulus}}. The plural of
+modulus is {\bf moduli\index{moduli}}. 
+
+\begin{comment}
+In Example \ref{Ex1.5},  it would be more precise to use something like
+$a +_n b$ and $a \cdot_n b$ for addition and multiplication in
+$\Z_n$, but in the interest of keeping the notation simple we omit the
+subscript $n$. Of course, this means that in any given situation,  we
+must be very clear about the value of $n$.  Note also that this is
+really an infinite class of examples: $\Z_2 =
+\{0,1\}$, 
+$\Z_3 = \{0,1,2\}$, $\Z_4 = \{0,1,2,3\}$, etc. Just to be clear, we give
+a few examples of addition and multiplication:
+\begin{description}
+        \item [In $\Z_4$:] $2 + 3 =1$, $2 + 2 = 0$, $0 + 3 = 3$, $2\cdot3= 2$,
+        $2\cdot2=0$ and $1\cdot3=3$.
+        \item[In $\Z_5$:] $2 + 3 =0$,  $2 + 2 = 4$, $0 + 3 = 3$,
+        $2\cdot3=1$,
+        $2\cdot2=4$ and $1\cdot3=3$
+\end{description} 
+\end{comment}
+
+\section{More Examples}
+\subsection{The group U(n) of units under multiplication modulo n}\index{group of units of $\Z_n$}
+
+\begin{defn} Let $n \ge 2$. An element $a \in \Z_n$ is said to be a \ind{unit} if there is an element $b \in \Z_n$ such that 
+        $ab =1$. Here the product is multiplication modulo $n$. We denote the
+        set of all units in $\Z_n$ by $U_n$. 
+\end{defn}
+\begin{comment}
+\noindent Note that 2 is a unit in $\Z_5$ since $2 \cdot 3=1$. Since the
+multiplication is commutative, 2 and 3 are both units. We say that 2 and
+3 are inverses of each other. But note that if we write
+$2^{-1}=3$,  we must keep in mind that by $2^{-1}$ in this context we do
+not mean the rational number $1/2$. The following theorem is easy to
+prove if we assume that multiplication modulo
+$n$ is associative and commutative.
+\end{comment}
+
+\begin{thm} $U_n$ is a group under multiplication modulo $n$.
+\end{thm}
+\noindent We call $U_n$ the \textbf{group of units of} $\Z_n$.
+
+\begin{thm} \label{Th5.2} For $n \ge 2$, $U_n = \{ a \in \Z_n:
+        \gcd(a,n)=1 \}$.
+        \footnote{
+                (Number Thoery) The order of the group $U_n$ is denoted by $\phi(n)$, is called the \emph{Euler totient
+                        function} and is  pronounced \emph{fee of n}. If $a$ and $b$ are positive integers such that $\gcd(a,b)=1$
+                then $\phi(ab) = \phi(a)\phi(b)$ and if $p$ is prime and $n \in \mathbb{N}$ then $\phi(p^n) = p^n - p^{n-1}$.  These facts make it easy to compute $\phi(n)$ if one can write $n$ as a product of primes. But there is no known easy way to compute $\phi(n)$ if the factorization of 
+                $n$ is unknown. 
+        }
+\end{thm}
+
+\begin{comment}
+Note that there are four different but similar symbols used in
+mathematics:
+
+\begin{enumerate}
+\item $\phi$ : lower case Greek letter phi (pronounced \emph{fee})
+\item $\Phi$ : capital Greek letter Phi
+\item $\varphi$ : lower case script Greek letter phi 
+\item $\emptyset$ : slashed zero (not Greek, but Danish) and symbol for
+the empty set 
+\end{enumerate}
+\end{comment}
+\begin{thm} \label{Th5.3} If $p$ is a prime then there is an element
+        $a \in U_p$ such  that $U_p = \langle a \rangle $. 
+\end{thm}
+\begin{comment}
+\noindent \textbf{Remark} It will be noted that sometimes even when
+$n$ is not prime there is an $a \in U_n$ such that $U_n = \langle a
+\rangle$. In fact, the following theorem from advanced number theory
+tells us exactly when such an $a$ exists.
+\begin{thm} If $n \ge 2$ then $U_n$ contains an element $a$
+satisfying $U_n = \langle a \rangle$ if and only if $a$ has one of the
+following forms: 2, 4, $p^k$, or $2p^k$ where $p$ is an odd prime and $k
+\in \N$.
+\end{thm}
+ So, for example, there is no such $a$ in $U_n$ if $n =
+ 2^k$ when
+ $k \ge 3$, nor for $n = 12$ or $15$. 
+
+\end{comment}
+
+\begin{xcb}{Exercises}
+\begin{enumerate}
+        \item Prove the easy part of  Theorem \ref{Th5.2}; namely,
+        show that if $a \in \Z_n$ and $\gcd(a,n)=d > 1$, then
+        $a$ is not a unit. [Hint: Show (1) that if 
+        $a \in \Z_n$ and $\gcd(a,n)=d > 1$ there is an element $b \in
+        \Z_n-\{ 0
+        \}$ such that $ab=0$. (2) If $b \in \Z_n -\{ 0\}$ and $ab=0$  then
+        $a$ is not a unit. ]
+\item 
+Demonstrate Theorem \ref{Th5.3} for all primes $p < 12$.
+\end{enumerate}
+        \end{xcb}
+\subsection{Dihedral Groups}
+The dihedral group $D_n$ is the symmetry group of a regular $n$-sided polygon.  Generated by a rotation $r$ of $2\pi/n$ radians and by a mirroring operation $s$, there are $2n$ elements in the group $D_n$:
+
+\begin{equation}
+D_n = \{e, r, r^2, ..., r^{n-1}, s, rs, ..., r^{n-1}s\}
+\end{equation}
+
+The largest (proper) subgroup of a dihedral group $D_n$ is of course the group generated by just $r$, the cyclic group $C_n$, of index 2 inside $D_n$.
+
+\begin{exa}
+	Let $T$ be an equilateral triangle with sides $A,B,C$ opposite vertices $a,b,c$ in anticlockwise
+	order. The symmetries of $T$ are the reflections in the
+	lines running from the corners to the midpoints of opposite sides, and the rotations.
+	There are three possible rotations, through anticlockwise 
+	angles $0,2\pi/3,4\pi/3$ which can be thought of
+	as $e,\omega,\omega^2$. Observe that $\omega^{-1} = \omega^2$. 
+	Let $r_a$ be a reflection through the line from the
+	vertex $a$ to the midpoint of $A$. Then $r_a = r_a^{-1}$ and similarly for $r_b,r_c$.
+	Then $\omega^{-1}r_a\omega = r_c$ but $r_a\omega^{-1}\omega = r_a$
+	so this group is {\em not commutative}. It is callec the {\em dihedral group} $D_3$ and
+	has $6$ elements.
+\end{exa}
+
+\begin{figure}[ht]
+
+\caption{The composition $\omega^{-1}r_a\omega = r_c$, but $r_a\omega^{-1}\omega = r_a$,
+so $D_3$ is not commutative.}
+\label{dihedral}
+\end{figure}
+
+\begin{exa}
+	If $P$ is an equilateral $n$--gon, the symmetries are reflections as above and rotations.
+	This is called the {\em dihedral group} $D_n$ and has $2n$ elements. The elements are
+	$e,\omega,\omega^2,\dots,\omega^{n-1}=\omega^{-1}$ 
+	and $r_1,r_2,\dots,r_n$ where $r_i^2 = e$ for all $i$, $r_ir_j = \omega^{2(i-j)}$ and
+	$\omega^{-1}r_i\omega = r_{i-1}$.
+\end{exa}
+
+\begin{exa}
+	The symmetries of an ``equilateral $\infty$--gon'' (i.e. the unique infinite $2$--valent
+	tree) defines a group $D_\infty$, the {\em infinite dihedral group}.
+\end{exa}
+\subsection{Generators and Relations*}
+\subsection{Permutation Groups*}
+\begin{defn}
+	A function $f: X \rightarrow Y$ is \emph{injective} if for every $x_1, x_2 \in X$, when $f(x_1) = f(x_2)$, $x_1 = x_2$.  A function $f: X \rightarrow Y$ is \emph{surjective} if for every $y \in Y$, there exists an $x \in X$ such that $f(x) = y$.  A function $f: \rightarrow Y$ is \emph{bijective} if it is both injective and surjective.
+\end{defn}
+
+\begin{defn}
+	A function is a \emph{permutation} if it is a bijection onto itself $f: X \rightarrow X$.  Notation: $X = \{ 1, 2, ... n \}$.  $\alpha = \left(
+	\begin{matrix}
+	1&2&...&n\\
+	\alpha(1)&\alpha(2)&...&\alpha(n)
+	\end{matrix} \right)$.
+\end{defn}
+
+\begin{defn}
+	$S_n$ is the group of permutations called the \emph{symmetric group}.
+\end{defn}
+
+\begin{ex}
+	Suppose $X = \{ 1, 2, 3, 4\}$ and $\alpha = \left(
+	\begin{matrix}
+	1&2&3&4\\
+	3&1&4&2
+	\end{matrix} \right)$.
+	
+	$\alpha \in S_4$, the set of permutations on $X$, and $\alpha(1) = 3, \alpha (2) = 1, \alpha(3) = 4, \alpha (4) = 2$.
+	
+	Suppose $X = \{ 1, 2, 3, 4\}$ and $\beta = \left(
+	\begin{matrix}
+	1&2&3&4\\
+	2&3&1&4
+	\end{matrix} \right)$.
+	
+	$\beta \in S_4$ as well.
+	
+	Composing $\alpha \circ \beta(1)$, we get $\alpha(2) = 1$.
+\end{ex}
+
+\begin{ex}
+	Let $X = \{1,2,3\}$.  We list the elements of $S_3$:
+	
+	$I = \left( \begin{matrix}
+	1&2&3\\
+	1&2&3
+	\end{matrix} \right)$
+	
+	$\alpha = \left( \begin{matrix}
+	1&2&3\\
+	3&1&2
+	\end{matrix} \right)$
+	
+	$\beta = \left( \begin{matrix}
+	1&2&3\\
+	3&2&1
+	\end{matrix} \right)$
+	
+	$\gamma = \left( \begin{matrix}
+	1&2&3\\
+	1&3&2
+	\end{matrix} \right)$
+	
+	$\delta = \left( \begin{matrix}
+	1&2&3\\
+	2&1&3
+	\end{matrix} \right)$
+	
+	$\mu = \left( \begin{matrix}
+	1&2&3\\
+	2&3&1
+	\end{matrix} \right)$
+\end{ex}
+
+\begin{ex}
+	Consider the Dihedral Group, $D_4$.
+	\begin{center}
+		%\includegraphics[width=1in]{DihedralGroup.jpg}
+	\end{center}
+	The identity is $I = \left( \begin{matrix}
+	1&2&3&4\\
+	1&2&3&4
+	\end{matrix} \right)$
+	
+	\begin{center}
+		%\includegraphics[width=1in]{DihedralGroupR90.jpg}
+	\end{center}
+	\noindent A rotation of 90-degrees would be: $R_{90} = \left( \begin{matrix}
+	1&2&3&4\\
+	2&4&1&3
+	\end{matrix} \right)$
+	
+	\noindent We can do this for the other rotations and flips about various axes too: $R_{180}, R_{270}, H, V, D_1, D_2$.
+\end{ex}
+
+\begin{defn}
+	If $\alpha \in S_n$ and $i \in \{1, 2,..., n \}$, then $\alpha$ \emph{fixes} $i$ if $\alpha(i) = i$.  $\alpha$ \emph{moves} $i$ if $\alpha(i) \neq i$.
+\end{defn}
+
+\begin{defn}
+	Let $i_1, i_2, ..., i_r$ be elements in $X = \{1, 2, ..., n\}$.  If $\alpha \in S_n$ fixes the other integers, and if $\alpha(i_1) = i_2, \alpha(i_2) = i_3, ..., \alpha(i_{r-1}) = i_n$ and $\alpha(i_r) = i_1$, then $\alpha$ is called an \emph{$r$-cycle}.  A 2-cycle is called a \emph{transposition}.  A 1-cycle is just the \emph{identity}.
+\end{defn}
+
+\begin{ex}
+	$\alpha = \left( \begin{matrix}
+	1&2&3&4&5\\
+	4&3&1&5&2
+	\end{matrix} \right) =
+	\left( \begin{matrix}
+	1&4&5&2&3
+	\end{matrix} \right)$
+\end{ex}
+
+\begin{ex}
+	$\alpha = \left( \begin{matrix}
+	1&2&3&4&5\\
+	2&3&1&4&5
+	\end{matrix} \right) =
+	\left( \begin{matrix}
+	1&2&3
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	4
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	5
+	\end{matrix} \right) =
+	\left( \begin{matrix}
+	1&2&3
+	\end{matrix} \right)$
+\end{ex}
+
+\begin{ex}  Write as a product of disjoint cycles.
+	$\alpha = \left( \begin{matrix}
+	1&2&3&4&5&6&7&8&9\\
+	6&4&7&2&5&1&8&9&3
+	\end{matrix} \right)$
+	
+	$= \left( \begin{matrix}
+	1&6
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	2&4
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	3&7&8&9
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	5
+	\end{matrix} \right)$
+\end{ex}
+
+\begin{ex}
+	Product of Permutations.
+	$\alpha= \left( \begin{matrix}
+	1&2
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	1&3&4&2&5
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	2&5&1&3
+	\end{matrix} \right)$
+	
+	We see that:
+	
+	$1 \rightarrow 3 \rightarrow 4$
+	
+	$2 \rightarrow 5 \rightarrow 1 \rightarrow 2$
+	
+	$3 \rightarrow 2 \rightarrow 5$
+	
+	$4 \rightarrow 2 \rightarrow 1$
+	
+	$5 \rightarrow 1 \rightarrow 3$
+	
+	So we have:
+	$= \left( \begin{matrix}
+	1&4
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	2
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	3&5
+	\end{matrix} \right) =
+	\left( \begin{matrix}
+	1&4
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	3&5
+	\end{matrix} \right)$
+\end{ex}
+
+\begin{defn}
+	Two cycles $\alpha = (a_1 a_2 ... a_m)$ and $\beta = (b_1 b_2 ... b_m)$ are disjoint if $a_i \neq b_j$ for all $i, j$.\footnote{Due to some confusion during the lecture, this definition was later added to these notes and is from Durbin's \emph{Modern Algebra}, Fifth Edition.}
+\end{defn}
+
+\begin{lem}
+	Disjoint cycles $\alpha, \beta \in S_n$ commute.
+\end{lem}
+
+\begin{note}
+	Every permutation is a product of disjoint cycles.
+\end{note}
+
+\begin{thm}
+	\begin{enumerate}
+		\item The inverse of $(i_1, i_2, ..., i_r)$ is the $r$-cycle $(i_r, i_{r-1}, ..., 1)$.
+		\item If $\alpha = \beta_1 \beta_2 ... \beta_t$ is a product of disjoint cycles, then $\alpha^{-1} = \beta^{-1}_1 \beta^{-1}_2 ... \beta^{-1}_t$.
+	\end{enumerate}
+\end{thm}
+
+\begin{proof}
+	\begin{enumerate}
+		\item Consider $$(i_1, i_2, ..., i_r)(i_r, i_{r-1}, ..., 1).$$  We see that:
+		
+		$i_1 \rightarrow i_r \rightarrow i_1$
+		
+		$i_2 \rightarrow i_1 \rightarrow i_2$
+		
+		...
+		
+		$i_{r-1} \rightarrow i_{r-2} \rightarrow i_{r-1}$
+		
+		$i_{r} \rightarrow i_{r-1} \rightarrow i_{r}$
+		
+		So $(i_1, i_2, ..., i_r)(i_r, i_{r-1}, ..., 1) = (1)$
+		
+		Similarly, $(i_r, i_{r-1}, ..., 1)(i_1, i_2, ..., i_r) = (1)$.
+		
+		\vspace{10 pt}
+		
+		\item Consider $(\beta_1 \beta_2 ... \beta_t)(\beta^{-1}_t \beta^{-1}_{t-1} ... \beta^{-1}_1)$.
+		
+		We see that $\beta_t \beta^{-1}_t = 1, \beta_{t-1} \beta^{-1}_{t-1} = 1$ and so on.  Thus we have 1.
+		
+		Similarly, $(\beta^{-1}_t \beta^{-1}_{t-1} ... \beta^{-1}_1)(\beta_1 \beta_2 ... \beta_t) = 1$.
+		
+		Since $\alpha = \beta_1 \beta_2 ... \beta_t$, then $\alpha^{-1} = \beta_t^{-1} \beta_{t-1}^{-1}...\beta_1^{-1}$.  From the Lemma, we know that $\alpha^{-1} = \beta_1^{-1} \beta_2^{-1}...\beta_t^{-1}$.
+	\end{enumerate}
+\end{proof}
+
+
+\begin{note}
+	If $n \geq 2$, then every $\alpha \in S_n$ is a product of transpositions.  To check this, consider:
+	
+	$\left( \begin{matrix}
+	1&2&...&r
+	\end{matrix} \right) =
+	\left( \begin{matrix}
+	1&r
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	1&r-1
+	\end{matrix} \right)
+	...
+	\left( \begin{matrix}
+	1&3
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	1&2
+	\end{matrix} \right)$
+\end{note}
+
+We see that:
+
+$1 \rightarrow 2$
+
+$2 \rightarrow 1 \rightarrow 3$
+
+$3 \rightarrow 1 \rightarrow 4$
+
+...
+
+$r-1 \rightarrow 1 \rightarrow r$
+
+\begin{defn}
+	A permutation is \emph{even} if it can be factored into a product of an even number of transpositions; otherwise, it is \emph{odd}.  The \emph{parity} of a permutation is whether it is even or odd.
+\end{defn}
+
+\begin{ex}
+	$\alpha =
+	\left( \begin{matrix}
+	1&2&3
+	\end{matrix} \right) =
+	\left( \begin{matrix}
+	1&3
+	\end{matrix} \right)
+	\left( \begin{matrix}
+	1&2
+	\end{matrix} \right)$
+	So it is even.
+\end{ex}
+\subsection{The general linear group GLn (n,R)}
+\subsection{Quaternion Group*}
+The \ind{quaternion group} is defined by
+\[Q_8 =\set{1,-1,i,-i,j,-j,k,-k} \] 
+with product computed as following group table.
+
+\begin{tabular}{r | r r r r r r r r}
+$\cdot$ & 1 & -1 & $i$ & $-i$ & $j$ & $-j$ & $k$ & $-k$ \\
+\hline
+1 & 1 & -1 & $i$ & $-i$ & $j$ & $-j$ & $k$ & $-k$ \\
+-1 & -1 & 1 & $-i$ & $i$ & $-j$ & $j$ & $-k$ & $k$ \\
+$i$ & $i$ & $-i$ & 1 & -1 & $k$ & $-k$ & $-j$ & $j$ \\
+$-i$ & $-i$ & $i$ & -1 & 1 & $-k$ & $k$ & $j$ & $-j$ \\
+$j$ & $j$ & $-j$ & $-k$ & $k$ & 1 & -1 & $i$ & $-i$ \\
+$-j$ & $-j$ & $j$ & $k$ & $-k$ & -1 & 1 & $-i$ & $i$ \\
+$k$ & $k$ & $-k$ & $j$ & $-j$ & $-j$ & $j$ & 1 & -1 \\
+$-k$ & $-k$ & $k$ & $-j$ & $j$ & $j$ & $-j$ & -1 & 1 
+\end{tabular}
+
+
+\section{Properties of Groups}
+
+\begin{xcb}{Exercises}
+        \begin{enumerate}
+                \item
+                Compute the order of each elements in $Q_8$.
+                \item
+                Find generators and relations for $Q_8$. 
+        \end{enumerate}
+
+\end{xcb}
+
+\begin{xcb}{~}
+        Verify that each of the following examples are groups under the proposed
+        operation, and calculate the identity and the inverse of a general element.
+        \begin{enumerate}
+                      \item{The group of {\em integers modulo $n$} under $+$. These are the sets
+                        of equivalence classes of integers, where $a \sim b$ if and only if $a-b$ is
+                        divisible by $n$. This group is denoted $\Z/n\Z$.}
+                \item{The set of $2\times 2$ matrices with entries in $\Z/2\Z$ (i.e. ``even'' and
+                        ``odd'') with the usual rules of multiplication and addition for
+                        even and odd numbers, with odd determinant, under matrix multiplication. This
+                        group is denoted $GL_2(\Z/2\Z)$.}
+                \item{The group of permutations of $n$ objects (which might as well be the
+                        set $\lbrace 1, \dots , n \rbrace$) under composition. This group is called the
+                        {\em symmetric group $S_n$}.}
+                \item{The group of symmetries of a regular $n$--gon under composition.
+                        This group is called the {\em dihedral group $D_n$}.}
+                \item{For an arbitrary set $X$, the group of $1$--$1$ and invertible maps $X \to X$
+                        under composition is a group. This group is called the {\em symmetric group of
+                                $X$} and denoted $S_X$.}
+                 \item For all integers $n\ge 1$, the set of complex nth roots of unity
+                 \[\set{\cos \frac{2k\pi}{n} + \sin \frac{2k\pi}{n} | k=0,1,2, \ldots, n-1}\]
+                 is a group under multiplication.
+        \end{enumerate}
+        
+   MORE: Gallian ex 17-21/p47 (Assignment M.Sc.)   
+        \end{xcb}
+\chapter{Finite Groups}
+\section{Subgroups}
+\section{Cyclic Groups}
+--complex roots of unity, circle group
+The commutator subgroup, 
+Center of a group, 
+\section{Cosets}Index of subgroup, Lagrange’s theorem, order of an element.
+\chapter{Normal subgroups}
+\section{Normal subgroups}
+?characterizations
+\section{Quotient groups}, 
+\chapter{Class equations}

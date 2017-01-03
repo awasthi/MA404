@@ -1,0 +1,65 @@
+\documentclass{mybook}
+\usepackage{a4wide}
+\usepackage{comment}
+%\includecomment{comment}
+%\excludecomment{answer}
+\everymath{\displaystyle}
+
+\newcommand{\ind}[1]{\emph{#1}\index{#1}}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+\def\CP{\mathbb {CP}}
+\def\H{\mathbb H}
+\def\E{\mathbb E}
+\def\S{\mathbb S}
+\def\F{\mathcal F}
+\def\D{\mathcal D}
+\def\C{\mathbb C}
+\def\Q{\mathbb Q}
+\def\A{\mathbb A}
+\def\til{\widetilde}
+\def\M{\mathcal M}
+\def\O{\mathcal O}
+\def\N{\mathbb N}
+\def\RP{\mathbb{RP}}
+\def\T{\mathcal T}
+\def\U{\mathcal U}
+\def\V{\mathcal V}
+\def\G{\mathcal G}
+\def\Aut{\text{Aut}}
+\def\Inn{\text{Inn}}
+\def\Out{\text{Out}}
+\def\Isom{\text{Isom}}
+\def\til{\widetilde}
+\def\1{{\bf 1}}
+\def\id{\text{id}}
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{xc}{Exercise}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{qn}[thm]{Question}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{ex}[thm]{Example}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{note}[thm]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{exa}[thm]{Example}
+\newtheorem{xca}[xc]{Exercise}
+\begin{document}
+\frontmatter
+\chapter*{Syllabus}
+\input{syllabus}
+\tableofcontents
+\mainmatter
+%\include{sets}
+\include{temp}
+\end{document}
